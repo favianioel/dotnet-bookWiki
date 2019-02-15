@@ -1,0 +1,18 @@
+@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer _localizer
+@{
+    ViewData["Title"] = _localizer["Index"];
+}
+
+<div class="jumbotron bg-info text-white">
+  <h1 style="text-align: center">BookWiki</h1> <hr>
+  <h4>This is my web platform developed on asp.net core for a single purpose build the biggest Book database</h4> 
+  <hr>
+</div>
+<div class="card" style="width:400px">
+  <img class="card-img-top" src="~/img/books.jpg" alt="Card image">
+  <div class="card-body">
+    <h4 class="card-title">Take a look at our books</h4>
+    <a asp-controller="Books" asp-action="Index" class="btn btn-primary">See Books</a>
+  </div>
+</div>

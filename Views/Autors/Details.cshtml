@@ -1,0 +1,37 @@
+@model BookWiki.ViewModels.ViewAutorViewModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>@Model.Autor.Name</h2><br>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Book Id</th>
+        <th>Book Title</th>
+        <th>Book Price</th>
+      </tr>
+    </thead>
+    <tbody>
+     @foreach (var item in Model.Books)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Book.Id)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Book.Title)
+                        </td>
+                        <td>
+                            $ @Html.DisplayFor(modelItem => item.Book.Price)
+                        </td>
+                    </tr>
+                }
+    </tbody>
+  </table>
+<div>
+    <a asp-action="AddBook" asp-route-id="@Model.Autor.Id">Add Book</a> |
+    <a asp-action="Edit"    asp-route-id="@Model.Autor.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
