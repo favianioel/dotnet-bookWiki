@@ -13,15 +13,11 @@ namespace BookWiki.Controllers
     public class BooksController : Controller
     {
         private readonly IStringLocalizer<BooksController> _localizer;
-
-        public BooksController(IStringLocalizer<BooksController> localizer)
-        {
-            this._localizer = localizer;
-        }
         private readonly BookContext _context;
 
-        public BooksController(BookContext context)
+        public BooksController(IStringLocalizer<BooksController> localizer,BookContext context)
         {
+            _localizer = localizer;
             _context = context;
         }
 
